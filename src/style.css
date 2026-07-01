@@ -1,5 +1,16 @@
+:root {
+  --title-font: "Playfair Display", serif;
+  --secondary-font: "Roboto", sans-serif;
+  --caption-font: "Poppins", sans-serif;
+}
+
 body {
   margin: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .hero-container {
@@ -8,43 +19,86 @@ body {
 
 header {
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url(/images/hans_zimmer.png);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   color: white;
   text-align: center;
   padding: 150px 0;
 }
 
 h1 {
-  font-family: "Playfair Display", serif;
+  font-family: var(--title-font);
   font-weight: 700;
   font-size: 100px;
   margin: 10px;
 }
 
 h2 {
-  font-family: "Roboto", sans-serif;
+  font-family: var(--secondary-font);
   font-weight: 400;
   font-size: 32px;
   margin: 0;
 }
 
 .caption {
-  font-family: "Poppins", sans-serif;
+  font-family: var(--caption-font);
   font-size: 20px;
   margin: 0;
 }
 
 button {
-  font-family: "Roboto", sans-serif;
+  font-family: var(--secondary-font);
   font-size: 14px;
   padding: 16px 32px;
   border-radius: 50px;
   border: none;
   margin: 30px;
   background: #e5a93b;
+  color: white;
+}
+
+footer {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(/images/hans-zimmer-band.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  padding: 50px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 3fr 3fr;
+  grid-gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+footer h4 {
+  font-family: var(--title-font);
+  font-size: 20px;
+}
+
+footer ul {
+  font-family: var(--secondary-font);
+  list-style: none;
+  line-height: 2;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+footer p {
+  font-family: var(--secondary-font);
+  line-height: 1.5;
+}
+
+footer a {
+  text-decoration: none;
   color: white;
 }
 
@@ -65,5 +119,10 @@ button {
   button {
     font-size: 12px;
     padding: 10px 20px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
   }
 }
