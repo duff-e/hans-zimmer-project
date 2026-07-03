@@ -15,18 +15,13 @@ body {
   max-width: 1600px;
 }
 
-.section-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  font-family: var(--secondary-font);
-}
-
+.section-container,
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.section-full-img {
+.section-background-img {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(/images/studio.jpg);
@@ -133,7 +128,11 @@ ul {
 }
 
 .img-responsive {
-  max-width: 100%;
+  width: 100%;
+}
+
+.img-column-portrait {
+  background: black;
 }
 
 .img-card {
@@ -158,20 +157,27 @@ button {
 .btn-card {
   display: block;
   margin: 0 auto;
-  padding: 16px 70px;
+  padding: 16px 32px;
+}
+.grid {
+  display: grid;
+  grid-gap: 30px;
 }
 
 .grid-2-columns {
-  display: grid;
   grid-template-columns: 1fr 1fr;
-  padding-right: 150px;
-  grid-gap: 50px;
 }
 
 .grid-3-columns {
-  display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 30px;
+  margin: 0 20px;
+  align-items: start;
+}
+
+.grid-3-columns-2-rows {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+  margin: 70px 20px;
 }
 
 .card {
@@ -189,6 +195,20 @@ section ul {
   list-style: "- ";
   padding: 10px;
   margin-top: 0;
+}
+
+.embed {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+.youtube {
+  aspect-ratio: 16/9;
+}
+
+.spotify {
+  aspect-ratio: 1/1;
 }
 
 hr {
@@ -253,25 +273,31 @@ footer a {
     font-size: 16px;
   }
 
-  button {
-    font-size: 12px;
-    padding: 10px 20px;
-  }
-
   .footer-grid {
     grid-template-columns: 1fr;
     grid-gap: 10px;
   }
 }
 
-@media (max-width: 765px) {
+@media (max-width: 768px) {
   .grid-2-columns {
     grid-template-columns: 1fr;
-    padding-right: 0;
+    grid-gap: 10px;
+    margin: 10px;
+  }
+
+  .grid-3-columns {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    margin: 20px;
+  }
+
+  .grid-3-columns-2-rows {
+    grid-template-columns: 1fr;
     grid-gap: 10px;
   }
-  .img-responsive {
-    display: block;
-    margin: 10px auto;
+  .embed {
+    height: auto;
+    width: auto;
   }
 }
